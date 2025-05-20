@@ -11,11 +11,15 @@ package designpatternsimplersolution;
 public abstract class Fries {
     protected int packet;
 
-    public abstract void prepareFries(); 
+    public abstract void prepareFries();
     public abstract double price(); 
 
     public void setSize(int packet) { 
         this.packet = packet;
-        System.out.println("Size set to: " + packet);
+        System.out.println("Size: " + packet);
+    }
+
+    public String getSauces() {
+        return "No Sauces"; 
     }
 }

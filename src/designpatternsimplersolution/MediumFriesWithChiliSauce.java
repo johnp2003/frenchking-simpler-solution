@@ -17,4 +17,9 @@ public class MediumFriesWithChiliSauce extends MediumFries {
     public double price() {
         return super.price() + 0.7; 
     }
+    
+    @Override
+    public String getSauces() {
+        return "Chili Sauce";
+    }
 }

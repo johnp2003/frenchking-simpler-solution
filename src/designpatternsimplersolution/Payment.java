@@ -8,20 +8,7 @@ package designpatternsimplersolution;
  *
  * @author johnp
  */
-public class Payment {
-    private final double amount;
-    private final String paymentMethod;
-
-    public Payment(double amount, String paymentMethod) {
-        this.amount = amount;
-        this.paymentMethod = paymentMethod;
-    }
-
-    public void makePayment() {
-        System.out.println("Processing payment of RM" + amount + " using " + paymentMethod);
-    }
-
-    public double getAmount() {
-        return this.amount;
-    }
+public interface Payment {
+    void makePayment();
+    double getAmount();
 }

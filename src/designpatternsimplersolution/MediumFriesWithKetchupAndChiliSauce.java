@@ -17,4 +17,9 @@ public class MediumFriesWithKetchupAndChiliSauce extends MediumFries {
     public double price() {
         return super.price() + 1.0; 
     }
+    
+    @Override
+    public String getSauces() {
+        return "Ketchup, Chili Sauce";
+    }
 }

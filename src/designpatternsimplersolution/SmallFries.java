@@ -24,6 +24,6 @@ public class SmallFries extends Fries {
 
     @Override
     public double price() {
-        return 3.0; // Small Fries price
+        return 3.0; 
     }
 }

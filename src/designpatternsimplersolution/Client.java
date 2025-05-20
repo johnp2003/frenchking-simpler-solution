@@ -15,7 +15,7 @@ public class Client {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-         Scanner scanner = new Scanner(System.in);
+         Scanner scanner = new Scanner(System.in);  
         Fries fries = null;
 
         System.out.println("Welcome to French King Fries!");
@@ -33,7 +33,7 @@ public class Client {
         System.out.println("4. Ketchup and Chili Sauce");
         int sauceChoice = scanner.nextInt();
 
-        
+       
         switch (sizeChoice) {
             case 1: 
                 switch (sauceChoice) {
@@ -106,7 +106,7 @@ public class Client {
         double price = fries.price();
         System.out.println("Total Price: RM" + String.format("%.2f", price));
 
-        // Payment Options
+        
         System.out.println("\nSelect Payment Method:");
         System.out.println("1. Credit Card");
         System.out.println("2. Online Banking");
@@ -114,26 +114,24 @@ public class Client {
         int paymentChoice = scanner.nextInt();
         scanner.nextLine(); 
 
-        String paymentMethod = "";
+        Payment paymentMethod = null;
         switch (paymentChoice) {
             case 1:
                 System.out.print("Enter Credit Card Number: ");
                 String cardNumber = scanner.nextLine();
-                paymentMethod = "Credit Card (" + cardNumber + ")";
+                paymentMethod = new CreditCardPayment(fries.price(), cardNumber); 
                 break;
             case 2:
                 System.out.print("Enter Bank Account Number: ");
                 String bankAccount = scanner.nextLine();
-                paymentMethod = "Online Banking (" + bankAccount + ")";
+                paymentMethod = new OnlineBankingPayment(fries.price(), bankAccount); 
                 break;
             default:
-                System.out.println("Invalid payment method. Defaulting to Cash.");
-                paymentMethod = "Cash";
+                System.out.println("Invalid payment method. Defaulting to Credit Card.");
+                paymentMethod = new CreditCardPayment(fries.price(), "0000-0000-0000-0000"); 
         }
 
-        Payment payment = new Payment(price, paymentMethod);
-        payment.makePayment();
-
+        paymentMethod.makePayment();
         scanner.close();
     }
     

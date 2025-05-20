@@ -17,4 +17,9 @@ public class LargeFriesWithKetchup extends LargeFries {
     public double price() {
         return super.price() + 0.5; 
     }
+    
+    @Override
+    public String getSauces() {
+        return "Ketchup";
+    }
 }

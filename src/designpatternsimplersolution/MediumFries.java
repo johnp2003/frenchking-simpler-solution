@@ -20,6 +20,6 @@ public class MediumFries extends Fries {
 
     @Override
     public double price() {
-        return 4.0; 
+        return 4.0;
     }
 }
